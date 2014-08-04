@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="cubie_dialog_message_install">請先下載 Cubie</string>
+    <string name="cubie_dialog_message_update">你的 Cubie 版本不技援 Open API，請先更新</string>
+    <string name="cubie_dialog_button_positive">馬上去 Google Play 下載</string>
+    <string name="cubie_dialog_button_negative">先不要</string>
+    <string name="error_unknown">未知的錯誤</string>
+    <string name="error_no_google_play_to_install_cubie">找不到 Google Play，無法下載 Cubie</string>
+    
+</resources>

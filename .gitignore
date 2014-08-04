@@ -1,0 +1,11 @@
+bin/
+gen/
+target/
+build/
+.gradle/
+.DS_Store
+.classpath
+.project
+.settings/
+*.swp
+.idea/

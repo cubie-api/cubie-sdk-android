@@ -1,0 +1,14 @@
+if ( gradle.startParameter.taskNames.find { it.toLowerCase().contains('eclipse') } != null ) {    
+    rootProject.buildFileName = 'eclipse-build.gradle'    
+} else {
+	gradle.allprojects {
+		buildscript {
+		    repositories {
+				mavenCentral()
+		    }
+		    dependencies {
+		        classpath 'com.android.tools.build:gradle:0.9.+'
+		    }
+		}
+	}
+}

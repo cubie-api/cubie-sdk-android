@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="cubie_dialog_message_install">Please install Cubie first</string>
+    <string name="cubie_dialog_message_update">Your version of Cubie does not support Open API, Please update</string>
+    <string name="cubie_dialog_button_positive">Go to Google Play</string>
+    <string name="cubie_dialog_button_negative">Not Now</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_no_google_play_to_install_cubie">Cannot install Cubie because Google Play is not found</string>
+
+</resources>
