@@ -82,6 +82,7 @@ public class CubieServiceV1 implements CubieService {
 
   @Override
   public void requestFriends(final CubieFriendList currentFriendListOrNull,
+      int pageSize,
       CubieServiceCallback<CubieFriendList> callback) {
     final SessionHelper session = SessionHelper.getSession();
     if (session == null) {
@@ -91,6 +92,7 @@ public class CubieServiceV1 implements CubieService {
     final CubieFriendList currentFriendList = currentFriendListOrNull == null ? EMPTY_FRIEND_LIST
         : currentFriendListOrNull;
     final Map<String, String> params = new HashMap<String, String>();
+    params.put("size", String.valueOf(pageSize));
     final List<CubieFriend> friends = currentFriendList.getAllFriends();
     if (!friends.isEmpty()) {
       params.put("start-friend-uid", friends.get(friends.size() - 1).getUid());

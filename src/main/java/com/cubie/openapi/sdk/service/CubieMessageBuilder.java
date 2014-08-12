@@ -1,6 +1,8 @@
 package com.cubie.openapi.sdk.service;
 
 public final class CubieMessageBuilder {
+  private static final int IMAGE_WIDTH = 192;
+  private static final int IMAGE_HEIGHT = 192;
   private String buttonText;
   private String imageUrl;
   private int imageWidth;
@@ -46,12 +48,10 @@ public final class CubieMessageBuilder {
     return setAppLink(linkText);
   }
 
-  public CubieMessageBuilder setImage(final String imageUrl,
-      final int imageWidth,
-      final int imageHeight) {
+  public CubieMessageBuilder setImage(final String imageUrl) {
     this.imageUrl = imageUrl;
-    this.imageWidth = imageWidth;
-    this.imageHeight = imageHeight;
+    imageWidth = IMAGE_WIDTH;
+    imageHeight = IMAGE_HEIGHT;
     return this;
   }
 

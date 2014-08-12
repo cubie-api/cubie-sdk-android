@@ -1,5 +1,5 @@
 group = 'com.cubie.openapi'
-version = '0.0.1'
+version = '0.0.2'
 
 project.ext.supportLibraryVersion = '19.0.1'
 project.ext.androidCompileSdkVersion = "Google Inc.:Google APIs:19"

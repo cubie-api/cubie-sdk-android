@@ -11,11 +11,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public final class CubieTransactionRequest {
-  private final String purchaseId;
+  private final String orderId;
 
-  private final String itemName;
+  private final String productId;
 
-  private final String currency;
+  private String currency;
 
   private final String price;
 
@@ -23,17 +23,25 @@ public final class CubieTransactionRequest {
 
   private final Map<String, Object> extra;
 
-  public CubieTransactionRequest(String purchaseId,
-      String itemName,
+  public CubieTransactionRequest(String orderId,
+      String productId,
+      String price,
+      long purchaseDate,
+      Map<String, Object> extra) {
+    this(orderId, productId, null, price, purchaseDate, extra);
+  }
+
+  public CubieTransactionRequest(String orderId,
+      String productId,
       String currency,
       String price,
-      Date purchaseDate,
+      long purchaseDate,
       Map<String, Object> extra) {
-    this.purchaseId = purchaseId;
-    this.itemName = itemName;
+    this.orderId = orderId;
+    this.productId = productId;
     this.currency = currency;
     this.price = price;
-    this.purchaseDate = purchaseDate;
+    this.purchaseDate = new Date(purchaseDate);
     this.extra = extra;
   }
 
@@ -53,8 +61,8 @@ public final class CubieTransactionRequest {
 
   public JSONObject encode() throws JSONException {
     final JSONObject jsonObject = new JSONObject();
-    jsonObject.put("purchase_id", purchaseId);
-    jsonObject.put("item_name", itemName);
+    jsonObject.put("purchase_id", orderId);
+    jsonObject.put("item_name", productId);
     jsonObject.put("currency", currency);
     jsonObject.put("price", price);
     jsonObject.put("purchase_date",
@@ -80,27 +88,31 @@ public final class CubieTransactionRequest {
     return extra;
   }
 
-  public String getItemName() {
-    return itemName;
+  public String getOrderId() {
+    return orderId;
   }
 
   public String getPrice() {
     return price;
   }
 
+  public String getProductId() {
+    return productId;
+  }
+
   public Date getPurchaseDate() {
     return purchaseDate;
   }
 
-  public String getPurchaseId() {
-    return purchaseId;
+  public void setCurrency(String currency) {
+    this.currency = currency;
   }
 
   @Override
   public String toString() {
-    return "CubieTransactionRequest [purchaseId=" + purchaseId
-        + ", itemName="
-        + itemName
+    return "CubieTransactionRequest [orderId=" + orderId
+        + ", productId="
+        + productId
         + ", currency="
         + currency
         + ", price="
