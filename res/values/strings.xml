@@ -7,5 +7,6 @@
     <string name="cubie_dialog_button_negative">Not Now</string>
     <string name="error_unknown">Unknown error</string>
     <string name="error_no_google_play_to_install_cubie">Cannot install Cubie because Google Play is not found</string>
+    <string name="connect_with_cubie">Connect with Cubie</string>
 
 </resources>

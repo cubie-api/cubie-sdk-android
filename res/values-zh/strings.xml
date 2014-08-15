@@ -7,5 +7,6 @@
     <string name="cubie_dialog_button_negative">先不要</string>
     <string name="error_unknown">未知的錯誤</string>
     <string name="error_no_google_play_to_install_cubie">找不到 Google Play，無法下載 Cubie</string>
+    <string name="connect_with_cubie">連結 Cubie</string>
     
 </resources>

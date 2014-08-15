@@ -7,6 +7,7 @@ public final class CubieMessageBuilder {
   private String imageUrl;
   private int imageWidth;
   private int imageHeight;
+  private String notification;
   private String text;
   private String linkText;
   private CubieMessageActionParams linkAction;
@@ -24,7 +25,8 @@ public final class CubieMessageBuilder {
         buttonText,
         buttonAction == null ? null : buttonAction.getAndroidExecuteParam(),
         buttonAction == null ? null : buttonAction.getAndroidMarketParam(),
-        buttonAction == null ? null : buttonAction.getIosExecuteParam());
+        buttonAction == null ? null : buttonAction.getIosExecuteParam(),
+        notification);
   }
 
   public CubieMessageBuilder setAppButton(final String buttonText) {
@@ -52,6 +54,11 @@ public final class CubieMessageBuilder {
     this.imageUrl = imageUrl;
     imageWidth = IMAGE_WIDTH;
     imageHeight = IMAGE_HEIGHT;
+    return this;
+  }
+
+  public CubieMessageBuilder setNotification(String notification) {
+    this.notification = notification;
     return this;
   }
 

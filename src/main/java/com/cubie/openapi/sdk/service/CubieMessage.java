@@ -15,6 +15,7 @@ public final class CubieMessage {
   private final String buttonAndroidExecuteParam;
   private final String buttonAndroidMarketParam;
   private final String buttonIosExecuteParam;
+  private final String notification;
 
   public CubieMessage(final String text,
       final String imageUrl,
@@ -27,7 +28,8 @@ public final class CubieMessage {
       final String buttonText,
       final String buttonAndroidExecuteParam,
       final String buttonAndroidMarketParam,
-      final String buttonIosExecuteParam) {
+      final String buttonIosExecuteParam,
+      final String notification) {
     this.text = text;
     this.imageUrl = imageUrl;
     this.imageWidth = imageWidth;
@@ -40,6 +42,7 @@ public final class CubieMessage {
     this.buttonAndroidExecuteParam = buttonAndroidExecuteParam;
     this.buttonAndroidMarketParam = buttonAndroidMarketParam;
     this.buttonIosExecuteParam = buttonIosExecuteParam;
+    this.notification = notification;
   }
 
   @Override
@@ -123,6 +126,13 @@ public final class CubieMessage {
     } else if (!linkText.equals(other.linkText)) {
       return false;
     }
+    if (notification == null) {
+      if (other.notification != null) {
+        return false;
+      }
+    } else if (!notification.equals(other.notification)) {
+      return false;
+    }
     if (text == null) {
       if (other.text != null) {
         return false;
@@ -177,6 +187,10 @@ public final class CubieMessage {
     return linkText;
   }
 
+  public String getNotification() {
+    return notification;
+  }
+
   public String getText() {
     return text;
   }
@@ -201,12 +215,14 @@ public final class CubieMessage {
         + ((linkAndroidMarketParam == null) ? 0 : linkAndroidMarketParam.hashCode());
     result = prime * result + ((linkIosExecuteParam == null) ? 0 : linkIosExecuteParam.hashCode());
     result = prime * result + ((linkText == null) ? 0 : linkText.hashCode());
+    result = prime * result + ((notification == null) ? 0 : notification.hashCode());
     result = prime * result + ((text == null) ? 0 : text.hashCode());
     return result;
   }
 
   public boolean isEmpty() {
-    return Strings.isBlank(linkText) && Strings.isBlank(buttonText)
+    return Strings.isBlank(notification) || Strings.isBlank(linkText)
+        && Strings.isBlank(buttonText)
         && Strings.isBlank(text)
         && Strings.isBlank(imageUrl);
   }
@@ -236,6 +252,8 @@ public final class CubieMessage {
         + buttonAndroidMarketParam
         + ", buttonIosExecuteParam="
         + buttonIosExecuteParam
+        + ", notification="
+        + notification
         + "]";
   }
 }

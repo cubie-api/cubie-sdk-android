@@ -28,6 +28,7 @@ public final class CubieMessageRequest {
     jsonObject.put("button_android_execute_param", cubieMessage.getButtonAndroidExecuteParam());
     jsonObject.put("button_android_market_param", cubieMessage.getButtonAndroidMarketParam());
     jsonObject.put("button_ios_execute_param", cubieMessage.getButtonIosExecuteParam());
+    jsonObject.put("notification", cubieMessage.getNotification());
     return jsonObject;
   }
 
