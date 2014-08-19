@@ -1,7 +1,9 @@
 package com.cubie.openapi.sdk;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.widget.Button;
 
 public class CubieConnectButton extends Button {
@@ -24,6 +26,12 @@ public class CubieConnectButton extends Button {
   private void init() {
     setBackgroundResource(R.drawable.cubie_connect_button);
     setText(R.string.connect_with_cubie);
+    setPadding(toPx(65), toPx(2), toPx(20), toPx(2));
+  }
+
+  private int toPx(int dp) {
+    final Resources r = getResources();
+    return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics());
   }
 
 }
