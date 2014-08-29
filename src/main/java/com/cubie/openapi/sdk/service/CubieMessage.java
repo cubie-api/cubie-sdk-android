@@ -2,6 +2,9 @@ package com.cubie.openapi.sdk.service;
 
 import com.cubie.openapi.sdk.internal.util.Strings;
 
+/**
+ * No need to use this class directly, build CubieMessage with {@link CubieMessageBuilder}
+ */
 public final class CubieMessage {
   private final String text;
   private final String imageUrl;

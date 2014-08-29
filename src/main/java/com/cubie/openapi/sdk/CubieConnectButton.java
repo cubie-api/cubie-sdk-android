@@ -6,6 +6,18 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.widget.Button;
 
+/**
+ * CubieConnectButton can be used in layout xml with the following tag
+ * 
+ * <pre>
+ * {@code
+ * <com.cubie.openapi.sdk.CubieConnectButton
+ *         android:id="@+id/connectButton"
+ *         android:layout_width="wrap_content"
+ *         android:layout_height="wrap_content" />
+ *         }
+ * </pre>
+ */
 public class CubieConnectButton extends Button {
 
   public CubieConnectButton(Context context) {

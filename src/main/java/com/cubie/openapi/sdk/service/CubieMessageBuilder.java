@@ -1,5 +1,9 @@
 package com.cubie.openapi.sdk.service;
 
+/**
+ * You must call {@link #setNotification(String)} to set the notification text of the message and
+ * provide one of the following 4 fields: text, image, link button for a message to be valid
+ */
 public final class CubieMessageBuilder {
   private static final int IMAGE_WIDTH = 192;
   private static final int IMAGE_HEIGHT = 192;

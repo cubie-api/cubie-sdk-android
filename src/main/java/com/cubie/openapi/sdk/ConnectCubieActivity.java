@@ -9,6 +9,15 @@ import com.cubie.openapi.sdk.internal.intent.ConnectParameters;
 import com.cubie.openapi.sdk.internal.intent.CubieIntents;
 import com.cubie.openapi.sdk.internal.intent.DisconnectParameters;
 
+/**
+ * Declare this activity in your AndroidManifest.xml
+ * 
+ * <pre>
+ * {@code
+ * <activity android:name="com.cubie.openapi.sdk.ConnectCubieActivity" /> 
+ * }
+ * </pre>
+ */
 public final class ConnectCubieActivity extends Activity {
   enum RequestCode {
     CONNECT, //

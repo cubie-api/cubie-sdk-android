@@ -1,5 +1,20 @@
 package com.cubie.openapi.sdk.service;
 
+/**
+ * <p>
+ * specify extra parameters when sending a message with link or button
+ * 
+ * <p>
+ * {@link #androidExecuteParam} & {@link #iosExecuteParam} will be appended to the launching url of
+ * your applications
+ * 
+ * <p>
+ * {@link #androidMarketParam} will be appended to the google play url of your application for
+ * download referrer tracking. There is no equivalent of this parameter for App Store.
+ * 
+ * @see <a
+ *      href="https://developers.google.com/analytics/devguides/collection/android/v2/campaigns">https://developers.google.com/analytics/devguides/collection/android/v2/campaigns</a>
+ */
 public final class CubieMessageActionParams {
   private String androidExecuteParam;
   private String androidMarketParam;

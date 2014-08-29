@@ -85,7 +85,8 @@ public final class SessionHelper {
   }
 
   /**
-   * If a session has already been initialized, nothing will happen (sessionCallback is skipped).
+   * If a session has already been initialized, nothing will happen ({@link #sessionCallback} is
+   * skipped).
    * Otherwise, current session will be initialized by trying to restore a previously opened session
    * (sessionCallback will be called). If the restored session is expiring within 30 days, it will
    * be extended automatically.
@@ -128,6 +129,9 @@ public final class SessionHelper {
     }
   }
 
+  /**
+   * Call this when the connected user explicitly want to disconnect your app from Cubie
+   */
   public void close(final Activity activity, final SessionCallback sessionCallback) {
     this.sessionCallback = sessionCallback;
 
@@ -247,6 +251,15 @@ public final class SessionHelper {
     }
   }
 
+  /**
+   * If the active session is opened and valid, {@link SessionCallback#onOpen()} will be called
+   * immediately;
+   * Otherwise, users will be redirected to Cubie app to authorize your app access to their
+   * information
+   * and permissions to send messages on behalf of them. After users confirm,
+   * {@link SessionCallback#onOpen()} will
+   * be called.
+   */
   public void open(final Activity activity, final SessionCallback sessionCallback) {
     checkIfConnectCubieActivityIsDefined(activity);
     checkIfAppKeyIsDefined(activity);
